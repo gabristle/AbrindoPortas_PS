@@ -22,33 +22,6 @@ function carregarFilmes(pagina) {
     });
 }
 
-function carregarFilmeDetalhes(filmeId) {
-    fetch('https://api.themoviedb.org/3/movie/' + filmeId, {
-        headers: {
-            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ZmI4OGQ2NWEzZGE3ZDVkOWVlMGViNjk2MGRhNzkwMSIsInN1YiI6IjY1ZjUxOTliZDRkNTA5MDE2NGFhNzU3NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.8npSSWfFE9BdG5oaeRbtRy8VKirIVikY4KAbNLeEwI8'
-        }
-    })
-        .then(function(response) {
-            if (!response.ok) {
-                throw new Error('Ocorreu um erro ao carregar os detalhes do filme.');
-            }
-            return response.json();
-        })
-        .then(function(data) {
-            exibirDetalhesFilme(data);
-        })
-        .catch(function(error) {
-            console.error(error.message);
-        });
-}
-
-function exibirDetalhesFilme(filme) {
-    document.getElementById('filme-title').textContent = filme.title;
-    document.getElementById('filme-poster').src = 'https://image.tmdb.org/t/p/w500' + filme.poster_path;
-    document.getElementById('filme-overview').textContent = filme.overview;
-    document.getElementById('filme-popularidade').textContent = 'Popularidade: ' + filme.popularity;
-}
-
 function exibirFilmes(filmes) {
     var filmesDiv = document.getElementById('filmes');
     filmesDiv.innerHTML = '';
@@ -69,12 +42,10 @@ function exibirFilmes(filmes) {
         var filmeTitle = document.createElement('h1');
         filmeTitle.textContent = filme.title.toUpperCase();
         filmeDiv.appendChild(filmeTitle);
-
-        filmeDiv.addEventListener('click', function() {
-            carregarFilmeDetalhes(filme.id);
-        });
-
         filmesDiv.appendChild(filmeDiv);
+        filmeDiv.addEventListener('click', function() {
+            window.location.href = 'detalhes.html?id=' + filme.id;
+        });
     });
 }
 
