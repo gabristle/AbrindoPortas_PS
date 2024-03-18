@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #444566;
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  position: relative;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0;
+  background-color: #211F45;
+  width: 100%;
+  height: 117px;
+}
+header img {
+  height: 97px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0;
+  padding-bottom: 80px;
+}
+main #search {
+  background-color: #FFFFFF;
+  height: 44px;
+  width: 300px;
+  border-radius: 60px;
+  border: none;
+  margin-top: 15px;
+  padding: 5%;
+}
+main #filmes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0;
+  width: 300px;
+  height: auto;
+}
+main #filmes .filme {
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+}
+main #filmes .filme h1 {
+  color: #FFFFFF;
+  font-weight: 800px;
+  font-size: 28px;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+}
+main #filmes .filme .posters {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+main #filmes .filme .gradient {
+  position: absolute;
+  border-radius: 8px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 99%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+}
+main #paginacao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0;
+}
+main #paginacao button {
+  background-color: #FFFFFF;
+  margin: 3px;
+  width: 30px;
+  border-radius: 3px;
+  border: none;
+}
+main #paginacao button a {
+  color: #211F45;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+main #paginacao button a:hover {
+  color: #FFFFFF;
+}
+main #paginacao button:hover {
+  background-color: #F17B7B;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #211F45;
+  height: 40px;
+  color: #EBCA58;
+}/*# sourceMappingURL=style.css.map */
